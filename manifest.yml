@@ -1,0 +1,9 @@
+---
+applications:
+- name: product-api
+  path: target/product-api.jar
+  memory: 1GB
+  instances: 1
+  buildpacks:
+  - java_buildpack
+  stack: cflinuxfs3

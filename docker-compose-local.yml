@@ -1,0 +1,13 @@
+services:
+  banking:
+    image: fast-inventory-product-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    environment:
+      - ENVIRONMENT=local
+      - MYSQL_BANKING_JDBC_URL=jdbc:mysql://host.docker.internal:3306/product?verifyServerCertificate=false&useSSL=false&useTimezone=true&serverTimezone=UTC
+      - MYSQL_BANKING_JDBC_USER=admin
+      - MYSQL_BANKING_JDBC_PASSWORD=admin12345
